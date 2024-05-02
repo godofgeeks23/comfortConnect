@@ -9,9 +9,6 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install spacy
 RUN python -m spacy download en_core_web_sm
-RUN pip install beautifulsoup4
-RUN pip install textblob
-RUN pip install lxml
 RUN pip install git+https://github.com/laxmimerit/preprocess_kgptalkie.git --upgrade --force-reinstall
 EXPOSE 5000
 CMD ["python", "predictor.py"]
