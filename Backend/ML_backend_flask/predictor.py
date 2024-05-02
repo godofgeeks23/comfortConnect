@@ -9,8 +9,11 @@ from sklearn.svm import LinearSVC
 import joblib
 import numpy as np
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 
 df_depression_model = pd.read_csv("data/ML Model and API/Depression Detection/Modelling/dataset.csv")
 df_schizophrenia = pd.read_csv("data/ML Model and API/Schizophrenia Detection/Model/dataset.csv")
